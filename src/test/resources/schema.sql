@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS users(id INT PRIMARY KEY, real_name VARCHAR(100), username VARCHAR(20));
+CREATE TABLE IF NOT EXISTS posts(id INT PRIMARY KEY, text VARCHAR(1000), author INT REFERENCES users(id), created_at TIMESTAMP);
+SET REFERENTIAL_INTEGRITY FALSE; -- to allow TRUNCATE TABLE with foreign key references
